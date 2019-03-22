@@ -1,0 +1,54 @@
+{
+  "cells": [
+    {
+      "type": "dialogue.Text",
+      "inPorts": [
+        "input"
+      ],
+      "outPorts": [
+        "output"
+      ],
+      "size": {
+        "width": 200,
+        "height": 64
+      },
+      "name": "one",
+      "position": {
+        "x": 301,
+        "y": 208
+      },
+      "angle": 0,
+      "id": "d62e18e6-5959-4fba-8a08-0175325fb963",
+      "z": 0,
+      "attrs": {
+        ".inPorts>.port0>text": {
+          "text": "input"
+        },
+        ".inPorts>.port0>circle": {
+          "port": {
+            "id": "input",
+            "type": "in"
+          }
+        },
+        ".inPorts>.port0": {
+          "ref": "rect",
+          "ref-y": 0.5
+        },
+        ".outPorts>.port0>text": {
+          "text": "output"
+        },
+        ".outPorts>.port0>circle": {
+          "port": {
+            "id": "output",
+            "type": "out"
+          }
+        },
+        ".outPorts>.port0": {
+          "ref": "rect",
+          "ref-y": 0.5,
+          "ref-dx": 0
+        }
+      }
+    }
+  ]
+}

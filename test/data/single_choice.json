@@ -1,0 +1,35 @@
+[
+  {
+    "type": "Text",
+    "id": "18cb0c78-1bb2-4f67-b514-679a2066d812",
+    "name": "one",
+    "choices": [
+      "25f690d9-f2cc-406f-841f-99aed29329d4",
+      "e4d78462-f278-4492-9407-d6616f533936"
+    ]
+  },
+  {
+    "type": "Choice",
+    "id": "25f690d9-f2cc-406f-841f-99aed29329d4",
+    "name": "one_a",
+    "next": "70707158-a504-443c-9c21-1816f51e988a"
+  },
+  {
+    "type": "Choice",
+    "id": "e4d78462-f278-4492-9407-d6616f533936",
+    "name": "one_b",
+    "next": "50634db8-98b7-47d6-9c2e-e1e60e7ddbd4"
+  },
+  {
+    "type": "Text",
+    "id": "70707158-a504-443c-9c21-1816f51e988a",
+    "name": "two_a",
+    "next": null
+  },
+  {
+    "type": "Text",
+    "id": "50634db8-98b7-47d6-9c2e-e1e60e7ddbd4",
+    "name": "two_b",
+    "next": null
+  }
+]

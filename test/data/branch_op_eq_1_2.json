@@ -1,0 +1,30 @@
+[
+  {
+    "type": "Branch",
+    "id": "0198030c-9bb0-42fe-9b0a-1ef8e3db4c84",
+    "variable": "var1&eq",
+    "branches": {
+      "2": "874a2cdf-ff5e-4057-ba38-367185f8f6a6",
+      "1.0": "ae6adf50-c53d-4c88-a5d2-749e63e9ddfa",
+      "_default": "6e864065-e9ed-4685-abcb-c137f18968bd"
+    }
+  },
+  {
+    "type": "Node",
+    "id": "6e864065-e9ed-4685-abcb-c137f18968bd",
+    "name": "default",
+    "next": null
+  },
+  {
+    "type": "Node",
+    "id": "ae6adf50-c53d-4c88-a5d2-749e63e9ddfa",
+    "name": "1",
+    "next": null
+  },
+  {
+    "type": "Node",
+    "id": "874a2cdf-ff5e-4057-ba38-367185f8f6a6",
+    "name": "2",
+    "next": null
+  }
+]

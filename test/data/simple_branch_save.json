@@ -1,0 +1,389 @@
+{
+  "cells": [
+    {
+      "type": "dialogue.Set",
+      "inPorts": [
+        "input"
+      ],
+      "outPorts": [
+        "output"
+      ],
+      "size": {
+        "width": 200,
+        "height": 100
+      },
+      "value": "1",
+      "name": "var1",
+      "position": {
+        "x": 299,
+        "y": 303
+      },
+      "angle": 0,
+      "id": "b9bb478c-bcf4-44c4-8085-86cb75d84713",
+      "z": 0,
+      "attrs": {
+        ".inPorts>.port0>text": {
+          "text": "input"
+        },
+        ".inPorts>.port0>circle": {
+          "port": {
+            "id": "input",
+            "type": "in"
+          }
+        },
+        ".inPorts>.port0": {
+          "ref": "rect",
+          "ref-y": 0.5
+        },
+        ".outPorts>.port0>text": {
+          "text": "output"
+        },
+        ".outPorts>.port0>circle": {
+          "port": {
+            "id": "output",
+            "type": "out"
+          }
+        },
+        ".outPorts>.port0": {
+          "ref": "rect",
+          "ref-y": 0.5,
+          "ref-dx": 0
+        }
+      }
+    },
+    {
+      "type": "dialogue.Branch",
+      "size": {
+        "width": 200,
+        "height": 162
+      },
+      "inPorts": [
+        "input"
+      ],
+      "outPorts": [
+        "output0",
+        "output1",
+        "output2"
+      ],
+      "values": [
+        "1",
+        "nil"
+      ],
+      "name": "var1",
+      "position": {
+        "x": 648,
+        "y": 248
+      },
+      "angle": 0,
+      "id": "ff6a2118-2c49-4d79-a10a-e1d3ea69ca07",
+      "z": 1,
+      "attrs": {
+        ".inPorts>.port0>text": {
+          "text": "input"
+        },
+        ".inPorts>.port0>circle": {
+          "port": {
+            "id": "input",
+            "type": "in"
+          }
+        },
+        ".inPorts>.port0": {
+          "ref": "rect",
+          "ref-y": 0.5
+        },
+        ".outPorts>.port0>text": {
+          "text": "output0"
+        },
+        ".outPorts>.port0>circle": {
+          "port": {
+            "id": "output0",
+            "type": "out"
+          }
+        },
+        ".outPorts>.port0": {
+          "ref": "rect",
+          "ref-y": 0.16666666666666666,
+          "ref-dx": 0
+        },
+        ".outPorts>.port1>text": {
+          "text": "output1"
+        },
+        ".outPorts>.port1>circle": {
+          "port": {
+            "id": "output1",
+            "type": "out"
+          }
+        },
+        ".outPorts>.port1": {
+          "ref": "rect",
+          "ref-y": 0.5,
+          "ref-dx": 0
+        },
+        ".outPorts>.port2>text": {
+          "text": "output2"
+        },
+        ".outPorts>.port2>circle": {
+          "port": {
+            "id": "output2",
+            "type": "out"
+          }
+        },
+        ".outPorts>.port2": {
+          "ref": "rect",
+          "ref-y": 0.8333333333333333,
+          "ref-dx": 0
+        }
+      }
+    },
+    {
+      "type": "link",
+      "id": "99f247b8-3260-4d04-9dbc-2f90723b12e4",
+      "smooth": true,
+      "embeds": "",
+      "source": {
+        "id": "b9bb478c-bcf4-44c4-8085-86cb75d84713",
+        "selector": "g:nth-child(1) g:nth-child(4) g:nth-child(1) circle:nth-child(1)     ",
+        "port": "output"
+      },
+      "target": {
+        "id": "ff6a2118-2c49-4d79-a10a-e1d3ea69ca07",
+        "selector": "g:nth-child(1) g:nth-child(3) g:nth-child(1) circle:nth-child(1)     ",
+        "port": "input"
+      },
+      "z": 2,
+      "attrs": {
+        ".marker-target": {
+          "d": "M 10 0 L 0 5 L 10 10 z"
+        },
+        ".link-tools .tool-remove circle, .marker-vertex": {
+          "r": 8
+        }
+      }
+    },
+    {
+      "type": "dialogue.Node",
+      "inPorts": [
+        "input"
+      ],
+      "outPorts": [
+        "output"
+      ],
+      "size": {
+        "width": 200,
+        "height": 64
+      },
+      "name": "nil",
+      "position": {
+        "x": 1058,
+        "y": 424
+      },
+      "angle": 0,
+      "id": "c6292e34-b447-4b69-aa2c-2894c11ff3df",
+      "z": 6,
+      "attrs": {
+        ".inPorts>.port0>text": {
+          "text": "input"
+        },
+        ".inPorts>.port0>circle": {
+          "port": {
+            "id": "input",
+            "type": "in"
+          }
+        },
+        ".inPorts>.port0": {
+          "ref": "rect",
+          "ref-y": 0.5
+        },
+        ".outPorts>.port0>text": {
+          "text": "output"
+        },
+        ".outPorts>.port0>circle": {
+          "port": {
+            "id": "output",
+            "type": "out"
+          }
+        },
+        ".outPorts>.port0": {
+          "ref": "rect",
+          "ref-y": 0.5,
+          "ref-dx": 0
+        }
+      }
+    },
+    {
+      "type": "link",
+      "id": "b8c1abf3-b61e-432f-b5bc-705014451ce8",
+      "smooth": true,
+      "embeds": "",
+      "source": {
+        "id": "ff6a2118-2c49-4d79-a10a-e1d3ea69ca07",
+        "selector": "g:nth-child(1) g:nth-child(4) g:nth-child(1) circle:nth-child(1)     ",
+        "port": "output0"
+      },
+      "target": {
+        "id": "f90d9dc4-172d-4186-b6c8-347ff09217fb",
+        "selector": "g:nth-child(1) g:nth-child(3) g:nth-child(1) circle:nth-child(1)     ",
+        "port": "input"
+      },
+      "z": 7,
+      "attrs": {
+        ".marker-target": {
+          "d": "M 10 0 L 0 5 L 10 10 z"
+        },
+        ".link-tools .tool-remove circle, .marker-vertex": {
+          "r": 8
+        }
+      }
+    },
+    {
+      "type": "link",
+      "id": "cd7379fa-5f77-4778-80dd-cd4038b9165e",
+      "smooth": true,
+      "embeds": "",
+      "source": {
+        "id": "ff6a2118-2c49-4d79-a10a-e1d3ea69ca07",
+        "selector": "g:nth-child(1) g:nth-child(4) g:nth-child(3) circle:nth-child(1)     ",
+        "port": "output2"
+      },
+      "target": {
+        "id": "c6292e34-b447-4b69-aa2c-2894c11ff3df",
+        "selector": "g:nth-child(1) g:nth-child(3) g:nth-child(1) circle:nth-child(1)     ",
+        "port": "input"
+      },
+      "z": 7,
+      "attrs": {
+        ".marker-target": {
+          "d": "M 10 0 L 0 5 L 10 10 z"
+        },
+        ".link-tools .tool-remove circle, .marker-vertex": {
+          "r": 8
+        }
+      }
+    },
+    {
+      "type": "dialogue.Node",
+      "inPorts": [
+        "input"
+      ],
+      "outPorts": [
+        "output"
+      ],
+      "size": {
+        "width": 200,
+        "height": 64
+      },
+      "name": "default",
+      "position": {
+        "x": 1060,
+        "y": 245
+      },
+      "angle": 0,
+      "id": "f90d9dc4-172d-4186-b6c8-347ff09217fb",
+      "z": 8,
+      "attrs": {
+        ".inPorts>.port0>text": {
+          "text": "input"
+        },
+        ".inPorts>.port0>circle": {
+          "port": {
+            "id": "input",
+            "type": "in"
+          }
+        },
+        ".inPorts>.port0": {
+          "ref": "rect",
+          "ref-y": 0.5
+        },
+        ".outPorts>.port0>text": {
+          "text": "output"
+        },
+        ".outPorts>.port0>circle": {
+          "port": {
+            "id": "output",
+            "type": "out"
+          }
+        },
+        ".outPorts>.port0": {
+          "ref": "rect",
+          "ref-y": 0.5,
+          "ref-dx": 0
+        }
+      }
+    },
+    {
+      "type": "link",
+      "id": "58860678-b7c3-4b34-b434-808c9a42349a",
+      "smooth": true,
+      "embeds": "",
+      "source": {
+        "id": "ff6a2118-2c49-4d79-a10a-e1d3ea69ca07",
+        "selector": "g:nth-child(1) g:nth-child(4) g:nth-child(2) circle:nth-child(1)     ",
+        "port": "output1"
+      },
+      "target": {
+        "id": "0d030d5d-f638-42d4-8c22-f7bcb363ddc5",
+        "selector": "g:nth-child(1) g:nth-child(3) g:nth-child(1) circle:nth-child(1)     ",
+        "port": "input"
+      },
+      "z": 8,
+      "attrs": {
+        ".marker-target": {
+          "d": "M 10 0 L 0 5 L 10 10 z"
+        },
+        ".link-tools .tool-remove circle, .marker-vertex": {
+          "r": 8
+        }
+      }
+    },
+    {
+      "type": "dialogue.Node",
+      "inPorts": [
+        "input"
+      ],
+      "outPorts": [
+        "output"
+      ],
+      "size": {
+        "width": 200,
+        "height": 64
+      },
+      "name": "correct",
+      "position": {
+        "x": 1057,
+        "y": 335
+      },
+      "angle": 0,
+      "id": "0d030d5d-f638-42d4-8c22-f7bcb363ddc5",
+      "z": 9,
+      "attrs": {
+        ".inPorts>.port0>text": {
+          "text": "input"
+        },
+        ".inPorts>.port0>circle": {
+          "port": {
+            "id": "input",
+            "type": "in"
+          }
+        },
+        ".inPorts>.port0": {
+          "ref": "rect",
+          "ref-y": 0.5
+        },
+        ".outPorts>.port0>text": {
+          "text": "output"
+        },
+        ".outPorts>.port0>circle": {
+          "port": {
+            "id": "output",
+            "type": "out"
+          }
+        },
+        ".outPorts>.port0": {
+          "ref": "rect",
+          "ref-y": 0.5,
+          "ref-dx": 0
+        }
+      }
+    }
+  ]
+}
