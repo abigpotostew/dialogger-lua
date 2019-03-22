@@ -9,11 +9,11 @@ This module provides a lua runtime for execution of Dialogger trees.
 
 The library tracks the current position in the tree and provides a callback to your application or game when each node is visited. The library also evaluates branch conditions.
 
-### Bindings
+## Bindings
 I have included a binding for the Defold game engine which has support for reading files and parsing json builtin. The defold binding in `bindings/defold.lua` can be used in the same way but requires the file to be passed in as a file path.
  
  
-### Usage
+## Usage
 #### Setup
 Run the dialogger application, create a tree, then save the game file (Right click > Export game file). You can save this as `.dl` or as `.json`.
 
@@ -57,12 +57,21 @@ local my_choice = choice_list[1] -- choice_list is from game_context
 Dialogue.next(execution, my_choice)
 ```
 
+## Node types behaviors
+- "Text" nodes invoke the visit() and text() handlers, then look forwards for choice nodes which are passed to the choices() handler if any are found. Finally the execution is paused. Upon return via `next()`, the selected choice is the next node, otherwise the single next node is selected.
+- "Node" nodes behave the same as "Text" nodes but do not call the text() handler.
+- "Set" nodes invoke the `set()` handler and immediately walk to the next node.
+- "Branch" nodes evaluate the branch condition using the `get()` handler to compare the branch condition to the variable value from `get()`. The next branch is immediately evaluated.
+- "Choice" nodes are supporting nodes that are evaluated with and just after a starting node. You can have any number of choices connected to a node. The list of choices are passed to the `choices()` handler.
+
+The `visit()` handler is called first for every node except "Choice" nodes.
+
 ### Branches
 The library by default supports simple string equality for branch conditions. When a branch is defined with condition `my_variable` and branches
 - `Default`
 - `huzzah`
 
-and the `my_variable` contains the string `huzzah` then the huzzah branch is selected.
+and the `my_variable` contains the string `huzzah` then the huzzah branch is selected. If the variable contains anything other than `huzzah`, then the `Default` branch is selected.
 
 
 ### Numeric Branches
@@ -100,10 +109,11 @@ Supported operators are:
 - "le" -- <=
 
 
-### Tree definition best practice
+## Tree definition best practice
 - Must have 1 starting node.
 - Start with "text", "node", or "branch" node type.
 - To have the first tree interaction be a choice, start with a "node" node and link the choices to that. 
 - Don't use the ampersand character `&` in your branch condition unless you want numeric evaluation
+- Always create a `Default` branch unless you're certain the branch condition will evaluate to true.
 - Use your own short unique IDs in the text and choice nodes and store the full dialogue text in another file like csv.
 
