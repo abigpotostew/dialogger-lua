@@ -17,6 +17,7 @@ I have included a binding for the Defold game engine which has support for readi
 #### Setup
 Run the dialogger application, create a tree, then save the game file (Right click > Export game file). You can save this as `.dl` or as `.json`.
 
+
 #### Example
 ```lua
 local dialogger = require "dialogger"
@@ -60,7 +61,9 @@ Dialogue.next(execution, my_choice)
 The library by default supports simple string equality for branch conditions. When a branch is defined with condition `my_variable` and branches
 - `Default`
 - `huzzah`
+
 and the `my_variable` contains the string `huzzah` then the huzzah branch is selected.
+
 
 ### Numeric Branches
 Additionally the library includes numeric parsing and evaluation for branch conditions.
@@ -70,6 +73,7 @@ For example, consider a branch with name `my_variable&lt` and three branch condi
 - `Default`
 - `1`
 - `5`
+
 The evaluation uses the less than operator to effectively become:
 ```lua
 if my_variable < 1 then
@@ -94,6 +98,7 @@ Supported operators are:
 - "ge" -- >=
 - "lt" -- <
 - "le" -- <=
+
 
 ### Tree definition best practice
 - Must have 1 starting node.
