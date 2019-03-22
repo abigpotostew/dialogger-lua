@@ -1,7 +1,9 @@
+local Dialogue = require "bindings.defold"
+
 local _ = require "underscore"
-local Dialogue = require "dialogger"
+
 local VariableState = require "variablestate"
-local json = require "json"
+local Json = require "json"
 
 local function readAll(file)
     local f = assert(io.open(file, "rb"))
@@ -9,6 +11,19 @@ local function readAll(file)
     f:close()
     return content
 end
+
+local sys = {}
+sys.load_resource = function(file)
+    return readAll(file)
+end
+
+local json = {}
+json.decode = function(str)
+    return Json.decode(str)
+end
+
+rawset(_G, "sys", sys)
+rawset(_G, "json", json)
 
 describe("Some tests", function()
     local var_state, game_context, choices, variables, visit_stack, tree, execution
@@ -47,8 +62,8 @@ describe("Some tests", function()
     end)
 
     local function load(filename)
-        local data = json.decode(readAll("test/data/"..filename))
-        tree = Dialogue.load(data)
+        local file = "test/data/"..filename
+        tree = Dialogue.load(file)
     end
 
 
@@ -56,6 +71,7 @@ describe("Some tests", function()
         load("single.json")
         execution = Dialogue.begin(tree, game_context)
         Dialogue.next(execution)
+        --pprint("AFTER NEXT CALL")
         assert(not Dialogue.finished(execution))
         assert(visit_stack[1].type == Dialogue.TNODE_TEXT)
         assert(visit_stack[1].name == "one")
@@ -71,7 +87,6 @@ describe("Some tests", function()
         Dialogue.next(execution)
         assert(visit_stack[1].type == Dialogue.TNODE_TEXT)
         assert(visit_stack[1].name == "one")
-        --choices
         assert(# (_.values(choices)) == 2)
         local choices1a = choices["one_a"]
         Dialogue.next(execution, choices1a)
